@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="tlgSapCooperacion_Sap_Read_ZWS_BP_READ" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://aws-s4q.cooperacionseguros.com.ar:8001/sap/bc/srt/rfc/sap/zws_bp_read/300/zws_bp_read/zws_bp_read</Value>
+    </Setting>
+    <Setting Name="tlgSapCooperacion_Sap_Change_ZWS_BP_CHANGE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://aws-s4q.cooperacionseguros.com.ar:8001/sap/bc/srt/rfc/sap/zws_bp_change/300/zws_bp_change/zws_bp_change</Value>
+    </Setting>
+    <Setting Name="tlgSapCooperacion_Sap_Create_ZWS_BP_CREATE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://aws-s4q.cooperacionseguros.com.ar:8001/sap/bc/srt/rfc/sap/zws_bp_create/300/zws_bp_create/zws_bp_create</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

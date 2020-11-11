@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN__ZWS_BP_CHANGE">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" />
+        <wsp:All>
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" />
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" />
+        <wsp:All>
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN__ZWS_BP_CHANGE_soap12">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization wsp:Optional="true" xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" />
+        <wsp:All>
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" />
+        <wsaw:UsingAddressing wsp:Optional="true" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" />
+        <wsp:All>
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF__ZWS_BP_CHANGE">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+          <sapsession:enableSession>false</sapsession:enableSession>
+        </sapsession:Session>
+        <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+          <sapcentraladmin:BusinessApplicationID>02AFD7F7C1961EE9A0E02B3FD3BFDD3B</sapcentraladmin:BusinessApplicationID>
+        </sapcentraladmin:CentralAdministration>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZFM_BP_SERVICES_CHANGE">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char15">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="15" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char17">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="17" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char22">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="22" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char241">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="241" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char244">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="244" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char25">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="25" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char250">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="250" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char32">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="32" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char5">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="5" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char60">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="60" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char8">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="8" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS">
+        <xsd:sequence>
+          <xsd:element name="CODIGO_SAP" type="tns:char10" />
+          <xsd:element name="CODIGO_EXTERNO" type="tns:char20" />
+          <xsd:element name="BASICOS" type="tns:ZST_BP_CHANGE_IN_WS_BASICOS" />
+          <xsd:element name="BASICOS_X" type="tns:ZST_BP_CHANGE_IN_WS_BASICOS_X" />
+          <xsd:element name="ROLES" type="tns:ZTT_BP_BU_PARTNERROLE" />
+          <xsd:element name="PERSONA" type="tns:ZST_BP_CREATE_IN_WS_PERSONA" />
+          <xsd:element name="PERSONA_X" type="tns:ZST_BP_CHANGE_IN_WS_PERSONA_X" />
+          <xsd:element name="EMPRESA" type="tns:ZST_BP_CHANGE_IN_WS_EMPRESA" />
+          <xsd:element name="EMPRESA_X" type="tns:ZST_BP_CHANGE_IN_WS_EMPRESA_X" />
+          <xsd:element name="IDENTIFICACION" type="tns:ZTT_BP_CHANGE_IN_WS_IDENT" />
+          <xsd:element name="DIRECCIONES" type="tns:ZTT_BP_CHANGE_IN_WS_DIRECCION" />
+          <xsd:element name="CONTACTO" type="tns:ZST_BP_CHANGE_IN_WS_CONTACTO" />
+          <xsd:element name="BANCARIOS" type="tns:ZTT_BP_CHANGE_IN_WS_BANCO" />
+          <xsd:element name="TARJETAS" type="tns:ZTT_BP_CREATE_IN_WS_TARJETA" />
+          <xsd:element name="IMPUESTOS" type="tns:ZTT_BP_CREATE_IN_WS_IMPUESTOS" />
+          <xsd:element name="ZAMP1" type="tns:ZST_BP_CREATE_IN_WS_AMP1" />
+          <xsd:element name="ZAMP1_X" type="tns:ZST_BP_CHANGE_IN_WS_AMP1_X" />
+          <xsd:element name="CLIENTE" type="tns:ZST_BP_CREATE_IN_WS_CLIENTE" />
+          <xsd:element name="CLIENTE_X" type="tns:ZST_BP_CHANGE_IN_WS_CLIENTE_X" />
+          <xsd:element name="PROVEEDOR" type="tns:ZST_BP_CREATE_IN_WS_PROVEEDOR" />
+          <xsd:element name="PROVEEDOR_X" type="tns:ZST_BP_CHANGE_IN_WS_PROVEED_X" />
+          <xsd:element name="ORIGEN" type="tns:char3" />
+          <xsd:element name="RELACIONES" type="tns:ZTT_BP_WS_CHANGE_REL" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_PROVEED_X">
+        <xsd:sequence>
+          <xsd:element name="CLASE_IMPUESTO" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_BU_PARTNERROLE">
+        <xsd:sequence>
+          <xsd:element name="ROL" type="tns:char6" />
+          <xsd:element name="VALIDO_DESDE" type="tns:char8" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_EMPRESA">
+        <xsd:sequence>
+          <xsd:element name="RAZON_SOCIAL" type="tns:char40" />
+          <xsd:element name="TIPO_PERSONA_JURIDICA" type="tns:char2" />
+          <xsd:element name="FECHA_INICIO_ACT" type="tns:char8" />
+          <xsd:element name="APODERADOS" type="tns:ZTT_BP_CHANGE_IN_WS_APODERADO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_APODERADO">
+        <xsd:sequence>
+          <xsd:element name="CODIGO_BP_SAP" type="tns:char10" />
+          <xsd:element name="FECHA_FIN" type="tns:char8" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CREATE_IN_WS_PROVEEDOR">
+        <xsd:sequence>
+          <xsd:element name="CLASE_IMPUESTO" type="tns:char2" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CREATE_IN_WS_PERSONA">
+        <xsd:sequence>
+          <xsd:element name="SEXO" type="tns:char1" />
+          <xsd:element name="NOMBRES" type="tns:char40" />
+          <xsd:element name="APELLIDOS" type="tns:char40" />
+          <xsd:element name="FECHA_NACIMIENTO" type="tns:char8" />
+          <xsd:element name="NACIONALIDAD" type="tns:char3" />
+          <xsd:element name="ESTADO_CIVIL" type="tns:char1" />
+          <xsd:element name="LUGAR_NACIMIENTO" type="tns:char40" />
+          <xsd:element name="PROFESION" type="tns:char4" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_BANCO">
+        <xsd:sequence>
+          <xsd:element name="PAIS" type="tns:char3" />
+          <xsd:element name="CODIGO" type="tns:char15" />
+          <xsd:element name="CUENTA" type="tns:char18" />
+          <xsd:element name="CBU" type="tns:char22" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+          <xsd:element name="TIPO" type="tns:char2" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_PERSONA_X">
+        <xsd:sequence>
+          <xsd:element name="SEXO" type="tns:char1" />
+          <xsd:element name="NOMBRES" type="tns:char1" />
+          <xsd:element name="APELLIDOS" type="tns:char1" />
+          <xsd:element name="FECHA_NACIMIENTO" type="tns:char1" />
+          <xsd:element name="NACIONALIDAD" type="tns:char1" />
+          <xsd:element name="ESTADO_CIVIL" type="tns:char1" />
+          <xsd:element name="LUGAR_NACIMIENTO" type="tns:char1" />
+          <xsd:element name="PROFESION" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_AMP1_X">
+        <xsd:sequence>
+          <xsd:element name="ZWS_ESPEP" type="tns:char1" />
+          <xsd:element name="ZCODACT" type="tns:char1" />
+          <xsd:element name="ZACTIVIDAD" type="tns:char1" />
+          <xsd:element name="ZPERFIL_PLA_PATOPE" type="tns:char1" />
+          <xsd:element name="ZPERFIL_PLA_FECALTA" type="tns:char1" />
+          <xsd:element name="ZINVESTIGADO_UIF" type="tns:char1" />
+          <xsd:element name="ZREQUERIDO_UIF_SSN" type="tns:char1" />
+          <xsd:element name="ZDOC_PERFIL_PLA" type="tns:char1" />
+          <xsd:element name="ZLATITUD" type="tns:char1" />
+          <xsd:element name="ZLONGITUD" type="tns:char1" />
+          <xsd:element name="FECALTA" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CREATE_IN_WS_TARJETA">
+        <xsd:sequence>
+          <xsd:element name="ID" type="tns:char6" />
+          <xsd:element name="ES_PRINCIPAL" type="tns:char1" />
+          <xsd:element name="EMPRESA" type="tns:char4" />
+          <xsd:element name="NUMERO" type="tns:char25" />
+          <xsd:element name="DENOMINACION" type="tns:char40" />
+          <xsd:element name="VALIDO_DESDE" type="tns:char8" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+          <xsd:element name="BANCO_EMISOR" type="tns:char40" />
+          <xsd:element name="FECHA_EMISION" type="tns:char8" />
+          <xsd:element name="BLOQUEOS" type="tns:ZTT_BP_CREATE_IN_WS_TARJ_LOKS" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CREATE_IN_WS_TARJ_LOKS">
+        <xsd:sequence>
+          <xsd:element name="MOTIVO" type="tns:char2" />
+          <xsd:element name="VALIDO_DESDE" type="tns:char8" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+          <xsd:element name="BORRAR_BLOQUEO" type="tns:char8" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CREATE_IN_WS_CLIENTE">
+        <xsd:sequence>
+          <xsd:element name="CLASE_IMPUESTO" type="tns:char2" />
+          <xsd:element name="CATEG_FISCALES" type="tns:ZTT_BP_CATEG_FISCALES" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CATEG_FISCALES">
+        <xsd:sequence>
+          <xsd:element name="CATEG_FISCAL" type="tns:char3" />
+          <xsd:element name="VALIDO_DESDE" type="tns:char8" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_EMPRESA_X">
+        <xsd:sequence>
+          <xsd:element name="RAZON_SOCIAL" type="tns:char1" />
+          <xsd:element name="TIPO_PERSONA_JURIDICA" type="tns:char1" />
+          <xsd:element name="FECHA_INICIO_ACT" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_IDENT">
+        <xsd:sequence>
+          <xsd:element name="TIPO_DOC" type="tns:char6" />
+          <xsd:element name="NUMERO_DOC" type="tns:char60" />
+          <xsd:element name="VALIDO_DESDE" type="tns:char8" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+          <xsd:element name="FECHA_ENTRADA" type="tns:char8" />
+          <xsd:element name="INSTITUCION" type="tns:char40" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_CONTACTO">
+        <xsd:sequence>
+          <xsd:element name="TELEFONOS" type="tns:ZTT_BP_CHANGE_IN_WS_TELEFONO" />
+          <xsd:element name="EMAIL" type="tns:ZTT_BP_CHANGE_IN_WS_EMAIL" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_EMAIL">
+        <xsd:sequence>
+          <xsd:element name="ID_EMAIL" type="tns:char3" />
+          <xsd:element name="ES_PRINCIPAL" type="tns:char1" />
+          <xsd:element name="EMAIL" type="tns:char241" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+          <xsd:element name="COMENTARIO" type="tns:char50" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_TELEFONO">
+        <xsd:sequence>
+          <xsd:element name="ID_NUMERO" type="tns:char3" />
+          <xsd:element name="ES_PRINCIPAL" type="tns:char1" />
+          <xsd:element name="ES_MOVIL" type="tns:char1" />
+          <xsd:element name="CON_FAX" type="tns:char1" />
+          <xsd:element name="NUMERO" type="tns:char30" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_BASICOS">
+        <xsd:sequence>
+          <xsd:element name="BLOQUEADO" type="tns:char1" />
+          <xsd:element name="ACTIVO" type="tns:char1" />
+          <xsd:element name="BUSQUEDA1" type="tns:char20" />
+          <xsd:element name="BUSQUEDA2" type="tns:char20" />
+          <xsd:element name="CLASE" type="tns:char4" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_WS_CHANGE_REL">
+        <xsd:sequence>
+          <xsd:element name="BP_RELACIONADO" type="tns:char10" />
+          <xsd:element name="RELACION" type="tns:char6" />
+          <xsd:element name="VALIDO_DESDE" type="tns:char8" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_BASICOS_X">
+        <xsd:sequence>
+          <xsd:element name="BLOQUEADO" type="tns:char1" />
+          <xsd:element name="ACTIVO" type="tns:char1" />
+          <xsd:element name="BUSQUEDA1" type="tns:char1" />
+          <xsd:element name="BUSQUEDA2" type="tns:char1" />
+          <xsd:element name="CLASE" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_DIR">
+        <xsd:sequence>
+          <xsd:element name="DIRECCION" type="tns:ZST_BP_CHANGE_IN_WS_DIRECCION" />
+          <xsd:element name="DIRECCION_X" type="tns:ZST_BP_CHANGE_IN_WS_DIRECCIONX" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_DIRECCIONX">
+        <xsd:sequence>
+          <xsd:element name="CODIGO_EXTERNO" type="tns:char1" />
+          <xsd:element name="ES_PRINCIPAL" type="tns:char1" />
+          <xsd:element name="CALLE" type="tns:char1" />
+          <xsd:element name="NUMERO" type="tns:char1" />
+          <xsd:element name="PISO" type="tns:char1" />
+          <xsd:element name="DEPARTAMENTO" type="tns:char1" />
+          <xsd:element name="MANZANA" type="tns:char1" />
+          <xsd:element name="MONOBLOCK" type="tns:char1" />
+          <xsd:element name="BARRIO" type="tns:char1" />
+          <xsd:element name="LOTE" type="tns:char1" />
+          <xsd:element name="CODIGO_POSTAL" type="tns:char1" />
+          <xsd:element name="CODIGO_POBLACION" type="tns:char1" />
+          <xsd:element name="PROVINCIA" type="tns:char1" />
+          <xsd:element name="PAIS" type="tns:char1" />
+          <xsd:element name="CONTACTO" type="tns:char1" />
+          <xsd:element name="CLASES" type="tns:char1" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_DIRECCION">
+        <xsd:sequence>
+          <xsd:element name="CODIGO_SAP" type="tns:char10" />
+          <xsd:element name="CODIGO_EXTERNO" type="tns:char20" />
+          <xsd:element name="ES_PRINCIPAL" type="tns:char1" />
+          <xsd:element name="CALLE" type="tns:char40" />
+          <xsd:element name="NUMERO" type="tns:char5" />
+          <xsd:element name="PISO" type="tns:char2" />
+          <xsd:element name="DEPARTAMENTO" type="tns:char2" />
+          <xsd:element name="MANZANA" type="tns:char10" />
+          <xsd:element name="MONOBLOCK" type="tns:char20" />
+          <xsd:element name="BARRIO" type="tns:char40" />
+          <xsd:element name="LOTE" type="tns:char40" />
+          <xsd:element name="CODIGO_POSTAL" type="tns:char10" />
+          <xsd:element name="CODIGO_POBLACION" type="tns:char12" />
+          <xsd:element name="PROVINCIA" type="tns:char3" />
+          <xsd:element name="PAIS" type="tns:char3" />
+          <xsd:element name="CONTACTO" type="tns:ZST_BP_CHANGE_IN_WS_CONTACTO" />
+          <xsd:element name="CLASES" type="tns:ZTT_BP_CHANGE_IN_WS_CLASES" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_CLASES">
+        <xsd:sequence>
+          <xsd:element name="CLASE" type="tns:char10" />
+          <xsd:element name="VALIDO_HASTA" type="tns:char8" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CREATE_IN_WS_IMPUESTOS">
+        <xsd:sequence>
+          <xsd:element name="TIPO_IMP" type="tns:char4" />
+          <xsd:element name="NUMERO_IMP" type="tns:char60" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CREATE_IN_WS_AMP1">
+        <xsd:sequence>
+          <xsd:element name="ZWS_ESPEP" type="tns:char1" />
+          <xsd:element name="ZCODACT" type="tns:char10" />
+          <xsd:element name="ZACTIVIDAD" type="tns:char244" />
+          <xsd:element name="ZPERFIL_PLA_PATOPE" type="tns:char20" />
+          <xsd:element name="ZPERFIL_PLA_FECALTA" type="tns:char8" />
+          <xsd:element name="ZINVESTIGADO_UIF" type="tns:char1" />
+          <xsd:element name="ZREQUERIDO_UIF_SSN" type="tns:char1" />
+          <xsd:element name="ZDOC_PERFIL_PLA" type="tns:char250" />
+          <xsd:element name="ZLATITUD" type="tns:char17" />
+          <xsd:element name="ZLONGITUD" type="tns:char17" />
+          <xsd:element name="FECALTA" type="tns:char8" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CHANGE_IN_WS_CLIENTE_X">
+        <xsd:sequence>
+          <xsd:element name="CLASE_IMPUESTO" type="tns:char1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CREATE_OUT_WS">
+        <xsd:sequence>
+          <xsd:element name="CODIGO_SAP" type="tns:char10" />
+          <xsd:element name="CODIGO_EXTERNO" type="tns:char20" />
+          <xsd:element name="DIREECCIONES" type="tns:ZTT_BP_CREATE_OUT_WS_DIRECCION" />
+          <xsd:element name="CONTACTO" type="tns:ZST_BP_CREATE_IN_WS_CONTACTO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CREATE_OUT_WS_DIRECCION">
+        <xsd:sequence>
+          <xsd:element name="CODIGO_SAP" type="tns:char10" />
+          <xsd:element name="CODIGO_EXTERNO" type="tns:char20" />
+          <xsd:element name="CONTACTO" type="tns:ZST_BP_CREATE_IN_WS_CONTACTO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_CREATE_IN_WS_CONTACTO">
+        <xsd:sequence>
+          <xsd:element name="TELEFONOS" type="tns:ZTT_BP_TELEFONOS" />
+          <xsd:element name="EMAILS" type="tns:ZTT_BP_EMAILS" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_EMAIL">
+        <xsd:sequence>
+          <xsd:element name="ID_EMAIL" type="tns:char3" />
+          <xsd:element name="ES_PRINCIPAL" type="tns:char1" />
+          <xsd:element name="EMAIL" type="tns:char241" />
+          <xsd:element name="COMENTARIO" type="tns:char50" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZST_BP_TELEFONO">
+        <xsd:sequence>
+          <xsd:element name="ID_NUMERO" type="tns:char3" />
+          <xsd:element name="ES_PRINCIPAL" type="tns:char1" />
+          <xsd:element name="ES_MOVIL" type="tns:char1" />
+          <xsd:element name="CON_FAX" type="tns:char1" />
+          <xsd:element name="NUMERO" type="tns:char30" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CVIS_MESSAGE">
+        <xsd:sequence>
+          <xsd:element name="IS_ERROR" type="tns:char1" />
+          <xsd:element name="MESSAGES" type="tns:BAPIRET2_T" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPIRET2">
+        <xsd:sequence>
+          <xsd:element name="TYPE" type="tns:char1" />
+          <xsd:element name="ID" type="tns:char20" />
+          <xsd:element name="NUMBER" type="tns:numeric3" />
+          <xsd:element name="MESSAGE" type="tns:char220" />
+          <xsd:element name="LOG_NO" type="tns:char20" />
+          <xsd:element name="LOG_MSG_NO" type="tns:numeric6" />
+          <xsd:element name="MESSAGE_V1" type="tns:char50" />
+          <xsd:element name="MESSAGE_V2" type="tns:char50" />
+          <xsd:element name="MESSAGE_V3" type="tns:char50" />
+          <xsd:element name="MESSAGE_V4" type="tns:char50" />
+          <xsd:element name="PARAMETER" type="tns:char32" />
+          <xsd:element name="ROW" type="xsd:int" />
+          <xsd:element name="FIELD" type="tns:char30" />
+          <xsd:element name="SYSTEMA" type="tns:char10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_BU_PARTNERROLE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_BU_PARTNERROLE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CHANGE_IN_WS_APODERADO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CHANGE_IN_WS_APODERADO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CHANGE_IN_WS_BANCO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CHANGE_IN_WS_BANCO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CREATE_IN_WS_TARJETA">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CREATE_IN_WS_TARJETA" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CREATE_IN_WS_TARJ_LOKS">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CREATE_IN_WS_TARJ_LOKS" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CATEG_FISCALES">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CATEG_FISCALES" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CHANGE_IN_WS_IDENT">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CHANGE_IN_WS_IDENT" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CHANGE_IN_WS_EMAIL">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CHANGE_IN_WS_EMAIL" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CHANGE_IN_WS_TELEFONO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CHANGE_IN_WS_TELEFONO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_WS_CHANGE_REL">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_WS_CHANGE_REL" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CHANGE_IN_WS_DIRECCION">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CHANGE_IN_WS_DIR" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CHANGE_IN_WS_CLASES">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CHANGE_IN_WS_CLASES" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CREATE_IN_WS_IMPUESTOS">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CREATE_IN_WS_IMPUESTOS" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_CREATE_OUT_WS_DIRECCION">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_CREATE_OUT_WS_DIRECCION" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_EMAILS">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_EMAIL" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTT_BP_TELEFONOS">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZST_BP_TELEFONO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BAPIRET2_T">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:BAPIRET2" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZFM_BP_SERVICES_CHANGE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IS_BP_CHANGE" type="tns:ZST_BP_CHANGE_IN_WS" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZFM_BP_SERVICES_CHANGEResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ES_BP_CHANGE" type="tns:ZST_BP_CREATE_OUT_WS" />
+            <xsd:element name="ES_ERROR" type="tns:CVIS_MESSAGE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZFM_BP_SERVICES_CHANGE">
+    <wsdl:part name="parameters" element="tns:ZFM_BP_SERVICES_CHANGE" />
+  </wsdl:message>
+  <wsdl:message name="ZFM_BP_SERVICES_CHANGEResponse">
+    <wsdl:part name="parameter" element="tns:ZFM_BP_SERVICES_CHANGEResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZWS_BP_CHANGE">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem docURL="https://aws-s4q.cooperacionseguros.com.ar:8001/sap/bc/esdt/docu/sd_text?sap-client=300&amp;sd_name=ZWS_BP_CHANGE" />
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF__ZWS_BP_CHANGE" />
+    </wsp:Policy>
+    <wsdl:operation name="ZFM_BP_SERVICES_CHANGE">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZFM_BP_SERVICES_CHANGE" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZFM_BP_SERVICES_CHANGE" />
+      <wsdl:output message="tns:ZFM_BP_SERVICES_CHANGEResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWS_BP_CHANGE" type="tns:ZWS_BP_CHANGE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZWS_BP_CHANGE" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZFM_BP_SERVICES_CHANGE">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_BP_CHANGE:ZFM_BP_SERVICES_CHANGERequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZWS_BP_CHANGE_soap12" type="tns:ZWS_BP_CHANGE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZWS_BP_CHANGE_soap12" />
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZFM_BP_SERVICES_CHANGE">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_BP_CHANGE:ZFM_BP_SERVICES_CHANGERequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWS_BP_CHANGE">
+    <wsdl:port name="ZWS_BP_CHANGE" binding="tns:ZWS_BP_CHANGE">
+      <soap:address location="https://aws-s4q.cooperacionseguros.com.ar:8001/sap/bc/srt/rfc/sap/zws_bp_change/300/zws_bp_change/zws_bp_change" />
+    </wsdl:port>
+    <wsdl:port name="ZWS_BP_CHANGE_soap12" binding="tns:ZWS_BP_CHANGE_soap12">
+      <wsoap12:address location="https://aws-s4q.cooperacionseguros.com.ar:8001/sap/bc/srt/rfc/sap/zws_bp_change/300/zws_bp_change/zws_bp_change" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
